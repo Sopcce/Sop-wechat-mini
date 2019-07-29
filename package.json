@@ -1,0 +1,26 @@
+{
+  "name": "Sop小秋",
+  "version": "1.0.0",
+  "description": "这是一个开源、分享的个人小程序，包括图书、图片、工具、资讯的一个.NET开发的交流圈小程序",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wechat-miniprogram/miniprogram-demo.git"
+  },
+  "author": "wechat-miniprogram",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/wechat-miniprogram/miniprogram-demo/issues"
+  },
+  "homepage": "https://github.com/wechat-miniprogram/miniprogram-demo#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0"
+  }
+}
