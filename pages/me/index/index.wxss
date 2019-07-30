@@ -30,9 +30,10 @@ page {
   display: block;
 	width: 160rpx;
 	height: 160rpx;
-  margin: 20rpx 0;
+  /* margin: 20rpx 0; */
   border: 5rpx solid #eee;
   border-radius: 50%;
+  z-index: 101;
 }
 
 .userbox .userinfo .userinfo-avatar-no {

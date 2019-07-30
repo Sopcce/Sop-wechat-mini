@@ -32,7 +32,7 @@ Page({
     let userInfo = wx.getStorageSync('userInfo')
     if (!userInfo) {
       wx.navigateTo({
-        url: "/pages/authorize/index"
+        url: "/pages/me/authorize/index"
       })
     }
   },
@@ -46,6 +46,7 @@ Page({
 
     var userInfo = wx.getStorageSync('userInfo')
     if (userInfo) {
+      console.log(JSON.stringify(userInfo))
       that.setData({
         userInfo: userInfo,
       })
@@ -238,15 +239,7 @@ Page({
      url: "/pages/authorize/index"
     })
     this.onLoad()
-  },
-  recharge: function () {
-    wx.navigateTo({
-      url: "/pages/recharge/index"
-    })
-  },
-  withdraw: function () {
-    wx.navigateTo({
-      url: "/pages/withdraw/index"
-    })
   }
+ 
+ 
 })

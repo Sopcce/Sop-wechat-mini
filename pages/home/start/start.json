@@ -3,7 +3,7 @@
   "enablePullDownRefresh": false,
   "disableScroll": true,
   "usingComponents": {
-    "wxc-button": "../../dist/packages/@minui/wxc-button/dist/index",
-    "wxc-icon": "../../dist/packages/@minui/wxc-icon/dist/index"
+    "wxc-button": "../packages/vant-weapp/button/index",
+    "wxc-icon": "../packages/vant-weapp/icon/index"
   }
 }

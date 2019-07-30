@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "用户信息授权",
+  "usingComponents": {
+    "wxc-button": "../packages/vant-weapp/button/index"
+  }
+}
