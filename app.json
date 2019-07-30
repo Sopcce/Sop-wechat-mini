@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/start/start",
+    "pages/home/start/start",
+    "pages/me/index/index",
     "pages/classification/index",
     "pages/choiceness/index",
     "pages/finder/index",
@@ -62,7 +63,7 @@
         "text": "购物车"
       },
       {
-        "pagePath": "pages/ucenter/index/index",
+        "pagePath": "pages/me/index/index",
         "iconPath": "images/nav/my-off.png",
         "selectedIconPath": "images/nav/my-on.png",
         "text": "我的"

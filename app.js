@@ -214,9 +214,10 @@ App({
     onLoadStatus: true,
     activeCategoryId: null,
 
-    globalBGColor: '#00afb4',
+    globalBGColor: '#00afb4',  //
     bgRed: 0,
     bgGreen: 175,
+    copyright:' © 2019  sopcce.com',
     bgBlue: 180,
     userInfo: null,
     subDomain: "tggtest",// 商城后台个性域名tgg

@@ -25,7 +25,7 @@ function formatNumber(n) {
 
 
 /**
- * 甜果果微信的的request
+ * 微信的的request
  */
 function request(url, data = {}, method = "GET") {
   return new Promise(function (resolve, reject) {
