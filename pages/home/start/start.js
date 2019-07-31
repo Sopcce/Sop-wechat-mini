@@ -20,6 +20,10 @@ Page({
       bgBlue: app.globalData.bgBlue,
       copyright:app.globalData.copyright
     })
+    
+    wx.switchTab({
+      url: '/pages/me/index/index',
+    });
   },
   onShow:function(){
 

@@ -23,24 +23,21 @@
 
   <view class='h-contents'>
     <view class='a-item'>
-      <wxc-icon type='purse' size='{{iconSize-10}}' color='#69C3AA' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+      <wxc-icon name="chat" size="2em" info="{{score}}"></wxc-icon>
       <view class='my'>
-        积分:
-        <view style='padding:0 10rpx;color: #69C3AA;font-weight: bold;'> {{score}} </view>
+        发帖    
       </view>
     </view>
     <view class='a-item'>
-      <wxc-icon type='yen' size='{{iconSize-10}}' color='#666666' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+     <wxc-icon name="chat"  size="2em" info="{{balance}}"></wxc-icon>
       <view class='my'>
-        余额:
-        <view style='padding: 0 10rpx;color: #666666;font-weight: bold;'> {{balance}} </view>
+        回帖      
       </view>
     </view>
     <view class='a-item'>
-      <wxc-icon type='after-sales' size='{{iconSize-10}}' color='#FF5777' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+      <wxc-icon name="chat" size="{{iconSize-20}}" info="{{freeze}}"></wxc-icon>
       <view class='my'>
-        提现中:
-        <view style='padding: 0 10rpx;color: #FF5777;font-weight: bold;'> {{freeze}} </view>
+        精华       
       </view>
     </view>  
   </view>
@@ -48,65 +45,53 @@
   <view class="user-menu">
     <view class="item">
       <navigator url="/pages/ucenter/order-list/index" hover-class="none" class="a">
-        <wxc-icon type='feedback' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <wxc-icon name='underway-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon'  ></wxc-icon>
         <text class="txt">订单管理</text>
       </navigator>
     </view>
     <view class="item">
       <navigator url="/pages/select-address/index" hover-class="none" class="a">
-        <wxc-icon type='address' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <wxc-icon name='wap-home' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
         <text class="txt">收货地址</text>
       </navigator>
     </view>
     <view class="item no-border-right">
       <navigator url="/pages/ucenter/location/location" hover-class="none" class="a">
-        <wxc-icon type='location' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
-        <text class="txt">到店里</text>
+        <wxc-icon name='location' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
+        <text class="txt">店铺地址</text>
       </navigator>
-    </view>
-    <view class="item">
-      <navigator url="/pages/ucenter/mycoupons/index" hover-class="none" class="a">
-        <wxc-icon type='coupon' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
-        <text class="txt">优惠券</text>
-      </navigator>
-    </view>
-    <view class="item">
-      <navigator url="" hover-class="none" class="a">
-        <wxc-icon type='rate' size='{{iconSize}}' color='lightgray' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
-        <text class="txt" style='color:lightgray;text-decoration: line-through;'>积分兑换</text>
-      </navigator>
-    </view>
-    <view class="item no-border-right">
-      <navigator url="/pages/target/index" hover-class="none" class="a">
-        <wxc-icon type='footprint' size='{{iconSize}}' color='lightgray' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
-        <text class="txt" style='color:lightgray;text-decoration: line-through;'>足迹</text>
-      </navigator>
-    </view>
+    </view>      
     <view class="item item-bottom" bindtap='makePhoneCall'>
       <navigator url="" hover-class="none" class="a">
-        <wxc-icon type='group' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <wxc-icon name='question-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
         <text class="txt">联系客服</text>
       </navigator>
     </view>
     <view class="item item-bottom" bindtap="aboutUs">
       <navigator url="url" hover-class="none" class="a">
-        <wxc-icon type='help' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <wxc-icon name='info-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
         <text class="txt">关于我们</text>
       </navigator>
     </view>
     <view class="item no-border-bottom">
       <navigator url="/pages/ucenter/feedback/feedback" hover-class="none" class="a">
-        <wxc-icon type='comment' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <wxc-icon name='warning-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
         <text class="txt">意见反馈</text>
       </navigator>
     </view>
   </view>
   <view style="height:20rpx;width:100%;"></view>
-  <view class="my-item" style='border:none;padding:0rpx;margin:0rpx;background:none;border:none;height:auto;line-height:auto;'>
-    <wxc-button plain hairline type="primary" bindclick="relogin">重新授权登录</wxc-button>
+  <view class="my-item" >
+    <wxc-button plain hairline type="primary" block="true" round="true" bindclick="relogin">重新授权登录</wxc-button>
   </view>
 
-  <view class="version" style='margin-top:10rpx;font-size:18rpx;'>Copyright © 2017-2018 qindiandadudu(GitHub ID)</view>
-  <view class='version' style='height:20rpx;line-height:20rpx;font-size:16rpx;font-style: oblique;'>Powered by EastWorld v {{version}}</view>
+
+
+
+
+
+
+  <view class="version" >Copyright © 2019-2018  {{version}} (GitHub sopcce)</view>
+   
   <view style="height:12rpx;width:100%;"></view>
 </view>

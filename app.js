@@ -1,11 +1,12 @@
 //app.js
 var starscore = require("./templates/starscore/starscore.js");
 App({
-  onLaunch: function () {
+
+  onLaunch: function() {
     var that = this;
     //  获取商城名称
     wx.request({
-      url: 'https://api.it120.cc/'+ that.globalData.subDomain +'/config/get-value',
+      url: 'https://api.it120.cc/' + that.globalData.subDomain + '/config/get-value',
       data: {
         key: 'mallName'
       },
@@ -20,7 +21,7 @@ App({
       data: {
         code: 'goodReputation'
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.code == 0) {
           that.globalData.order_reputation_score = res.data.data[0].score;
         }
@@ -31,7 +32,7 @@ App({
       data: {
         key: 'recharge_amount_min'
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.code == 0) {
           that.globalData.recharge_amount_min = res.data.data.value;
         }
@@ -41,7 +42,7 @@ App({
     wx.request({
       url: 'https://api.it120.cc/' + that.globalData.subDomain + '/shop/goods/kanjia/list',
       data: {},
-      success: function (res) {
+      success: function(res) {
         if (res.data.code == 0) {
           that.globalData.kanjiaList = res.data.data.result;
         }
@@ -49,7 +50,7 @@ App({
     })
     wx.request({
       url: 'https://api.it120.cc/' + that.globalData.subDomain + '/shop/goods/category/all',
-      success: function (res) {
+      success: function(res) {
         var categories = []; //{ id: 0, name: "全品类" }
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.length; i++) {
@@ -57,20 +58,20 @@ App({
           }
         }
         that.globalData.categories = categories
-        that.getGoods(0);//获取全品类商品
+        that.getGoods(0); //获取全品类商品
       },
-      fail: function () {
+      fail: function() {
         that.globalData.onLoadStatus = false
         wx.hideLoading()
         console.log('11')
       }
     })
   },
-  sendTempleMsg: function (orderId, trigger, template_id, form_id, page, postJsonString, emphasis_keyword){
+  sendTempleMsg: function(orderId, trigger, template_id, form_id, page, postJsonString, emphasis_keyword) {
     var that = this;
     wx.request({
       url: 'https://api.it120.cc/' + that.globalData.subDomain + '/template-msg/put',
-      method:'POST',
+      method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -91,7 +92,7 @@ App({
       }
     })
   },
-  getGoods: function (categoryId) {
+  getGoods: function(categoryId) {
     if (categoryId == 0) {
       categoryId = "";
     }
@@ -104,7 +105,7 @@ App({
         pageSize: that.globalData.pageSize,
         categoryId: categoryId
       },
-      success: function (res) {
+      success: function(res) {
         that.globalData.goods = []
         var goods = [];
 
@@ -140,7 +141,7 @@ App({
           goods[i].starscore = (goods[i].numberGoodReputation / goods[i].numberOrders) * 5
           goods[i].starscore = Math.ceil(goods[i].starscore / 0.5) * 0.5
           goods[i].starpic = starscore.picStr(goods[i].starscore)
-          
+
         }
         that.globalData.goods = goods
         console.log('getGoodsReputation----------------------')
@@ -154,7 +155,7 @@ App({
             pageSize: that.globalData.pageSize,
             categoryId: categoryId
           },
-          success: function (res) {
+          success: function(res) {
             var categories = that.globalData.categories
             var goodsList = [],
               id,
@@ -173,25 +174,31 @@ App({
                   goodsTemp.push(goods[j])
                 }
               }
-              if ((that.globalData.activeCategoryId === null)&(goodsTemp.length>0)){
-                that.globalData.activeCategoryId = categories[i].id  
+              if ((that.globalData.activeCategoryId === null) & (goodsTemp.length > 0)) {
+                that.globalData.activeCategoryId = categories[i].id
               }
-              goodsList.push({ 'id': id, 'key': key, 'name': name, 'type': typeStr, 'goods': goodsTemp })
-              console.log("你好," + categories[i].name)
+              goodsList.push({
+                'id': id,
+                'key': key,
+                'name': name,
+                'type': typeStr,
+                'goods': goodsTemp
+              })
+              // console.log("你好," + categories[i].name)
             }
 
             that.globalData.goodsList = goodsList
             that.globalData.onLoadStatus = true
-            console.log('categories:',categories)
+            console.log('categories:', categories)
             //that.globalData.activeCategoryId = categories[0].id   改为第一个不为null的类
-            
+
 
             console.log('getGoodsList----------------------')
-            console.log(that.globalData.goodsList)
+            //console.log(that.globalData.goodsList)
           },
-          fail: function () {
+          fail: function() {
             that.globalData.onLoadStatus = false
-            
+
             console.log('33')
           }
         })
@@ -203,7 +210,7 @@ App({
       }
     })
   },
-  globalData:{
+  globalData: {
     page: 1, //初始加载商品时的页面号
     pageSize: 10000, //初始加载时的商品数，设置为10000保证小商户能加载完全部商品
     categories: [],
@@ -214,15 +221,20 @@ App({
     onLoadStatus: true,
     activeCategoryId: null,
 
-    globalBGColor: '#00afb4',  //
+    globalBGColor: '#00afb4', //
     bgRed: 0,
     bgGreen: 175,
-    copyright:' © 2019  sopcce.com',
+    copyright: ' © 2019  sopcce.com',
     bgBlue: 180,
     userInfo: null,
-    subDomain: "tggtest",// 商城后台个性域名tgg
+    subDomain: "tggtest", // 商城后台个性域名tgg
+    apiDomain: "https://www.sopcce.com/v1/api",
     version: "2.0.6",
     shareProfile: '   一流的服务，做超新鲜的水果' // 首页转发的时候术语
   }
+  
+
+
+
   // 根据自己需要修改下单时候的模板消息内容设置，可增加关闭订单、收货时候模板消息提醒
 })

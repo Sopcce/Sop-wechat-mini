@@ -12,9 +12,10 @@
         <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
       </view>
       <view class="bd">
-        <view class="smalltitle" >不容易的一代人，进过了非典，猪瘟，工作不包分配，房价飞涨等等</view>
+        <view class="smalltitle">有 “梦想” 就要 “行动”</view>
+       
         <wxc-button round='true' type="primary" class="confirm-btn" size='normal' bindclick='goToIndex'>
-          欢迎光临 
+          欢迎光临
           <wxc-icon style='margin-left:20rpx;' color="#fff" name="arrow"></wxc-icon>
         </wxc-button>
         <text class="copyright">{{copyright}}</text>

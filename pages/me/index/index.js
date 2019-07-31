@@ -1,15 +1,24 @@
-const app = getApp()
+const app = getApp();
+const scoresign = app.globalData.apiDomain +"/score/sign";
+const scoretodaysigned = app.globalData.apiDomain + "/score/todaysigned";
+const userbindMobile = app.globalData.apiDomain + "/user/bindMobile";
+const userdetail = app.globalData.apiDomain + "/user/detail";
+const useramount = app.globalData.apiDomain + "/user/amount";
+const configGetvalue = app.globalData.apiDomain + "/config/Getvalue";
+
+
+
 
 Page({
   data: {
     aboutUsTitle: '',
     aboutUsContent: '',
     servicePhoneNumber: '',
-    balance: 0,
-    freeze: 0,
-    score: 0,
+    balance: '99+',
+    freeze: 4,
+    score: 10,
     score_sign_continuous: 0,
-    iconSize: 45,
+    iconSize: '2em',
     iconColor: '#999999'
   },
   onPullDownRefresh: function () {
@@ -27,6 +36,7 @@ Page({
       bgRed: app.globalData.bgRed,
       bgGreen: app.globalData.bgGreen,
       bgBlue: app.globalData.bgBlue
+
     })
 
     let userInfo = wx.getStorageSync('userInfo')
@@ -87,8 +97,9 @@ Page({
       return;
     }
     var that = this;
+
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/wxapp/bindMobile',
+      url: userbindMobile,
       data: {
         token: wx.getStorageSync('token'),
         encryptedData: e.detail.encryptedData,
@@ -115,7 +126,7 @@ Page({
   getUserApiInfo: function () {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/detail',
+      url: userdetail,
       data: {
         token: wx.getStorageSync('token')
       },
@@ -133,7 +144,7 @@ Page({
   getUserAmount: function () {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/amount',
+      url: useramount,
       data: {
         token: wx.getStorageSync('token')
       },
@@ -153,7 +164,7 @@ Page({
     var that = this
     //  获取关于我们Title
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/config/get-value',
+      url: configGetvalue,
       data: {
         key: 'aboutUsTitle'
       },
@@ -167,7 +178,7 @@ Page({
     })
     //  获取关于我们内容
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/config/get-value',
+      url: configGetvalue,
       data: {
         key: 'aboutUsContent'
       },
@@ -184,7 +195,7 @@ Page({
     var that = this
     //  获取客服电话
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/config/get-value',
+      url: configGetvalue,
       data: {
         key: 'servicePhoneNumber'
       },
@@ -200,7 +211,7 @@ Page({
   checkScoreSign: function () {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/score/today-signed',
+      url: scoretodaysigned,
       data: {
         token: wx.getStorageSync('token')
       },
@@ -216,7 +227,7 @@ Page({
   scoresign: function () {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/score/sign',
+      url: scoresign,
       data: {
         token: wx.getStorageSync('token')
       },

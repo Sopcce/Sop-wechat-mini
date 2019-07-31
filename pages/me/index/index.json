@@ -3,9 +3,11 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "wxc-avatar": "../packages/wux-weapp/avatar/index",
-      "wxc-image": "../packages/wux-weapp/image/index",
+    "wxc-image": "../packages/wux-weapp/image/index",
     "wxc-button": "../packages/vant-weapp/button/index",
     "wxc-icon": "../packages/vant-weapp/icon/index",
-    "wxc-label": "../packages/vant-weapp/tab/index"
+    "wxc-label": "../packages/vant-weapp/tab/index",
+    "wxc-row": "../packages/vant-weapp/row/index",
+    "wxc-col": "../packages/vant-weapp/col/index"
   }
 }
