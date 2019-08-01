@@ -14,8 +14,8 @@
     </view>
   </view>
   <view class="bottom-box">
-    <view class='arrow-right'>
-      <view class="add-btn" bindtap="addAddess">新增收货地址</view>
+    <view class='arrow-right'>  
+       <wxc-button  class="add-btn" plain hairline type="primary" block="true" round="true" bindclick="addAddess">新增收货地址</wxc-button>
     </view>
   </view>
 

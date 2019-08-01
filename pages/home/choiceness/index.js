@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var starscore = require("../../templates/starscore/starscore.js");
+var starscore = require("../../../templates/starscore/starscore.js");
 var app = getApp();
 Page({
   data: {

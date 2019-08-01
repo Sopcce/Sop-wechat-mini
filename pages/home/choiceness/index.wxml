@@ -1,4 +1,4 @@
-<import src="../../templates/recommend-goods-item/recommend-goods-item.wxml" />
+<import src="../../../templates/recommend-goods-item/recommend-goods-item.wxml" />
 
 <view wx:if="{{noticeList}}" style="height: 100rpx;"></view>
 

@@ -1,5 +1,5 @@
 /**index.wxss**/
-@import "../../templates/recommend-goods-item/recommend-goods-item.wxss";
+@import "../../../templates/recommend-goods-item/recommend-goods-item.wxss";
 
 page {
   min-height: 100%;

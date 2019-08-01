@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/home/start/start",
+    "pages/home/choiceness/index",
     "pages/me/index/index",
+    "pages/me/select-address/index",
     "pages/finder/index",
-    "pages/classification/index",
-    "pages/choiceness/index"
+    "pages/classification/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,7 +22,7 @@
     "box-shadow": "0 0 4px 0",
     "list": [
       {
-        "pagePath": "pages/choiceness/index",
+        "pagePath": "pages/home/choiceness/index",
         "iconPath": "images/nav/select-off.png",
         "selectedIconPath": "images/nav/select-on.png",
         "text": "精选"
@@ -51,6 +52,11 @@
     "connectSocket": 10000,
     "uploadFile": 10000,
     "downloadFile": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"  
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

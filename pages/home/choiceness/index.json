@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wxc-icon": "../packages/vant-weapp/icon/index",
+    "wxc-flex": "../packages/vant-weapp/field/index",
+    "wxc-loadmore": "../packages/vant-weapp/loading/index",    
+    "wxc-label": "../packages/vant-weapp/label/index",
+    "wxc-popup": "../packages/vant-weapp/popup/index"
+  }
+}

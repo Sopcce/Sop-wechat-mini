@@ -35,7 +35,7 @@
       </view>
     </view>
     <view class='a-item'>
-      <wxc-icon name="chat" size="{{iconSize-20}}" info="{{freeze}}"></wxc-icon>
+      <wxc-icon name="chat" size="{{iconSize}}" info="{{freeze}}"></wxc-icon>
       <view class='my'>
         精华       
       </view>
@@ -44,19 +44,19 @@
 
   <view class="user-menu">
     <view class="item">
-      <navigator url="/pages/ucenter/order-list/index" hover-class="none" class="a">
+      <navigator url="/pages/me/order-list/index" hover-class="none" class="a">
         <wxc-icon name='underway-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon'  ></wxc-icon>
         <text class="txt">订单管理</text>
       </navigator>
     </view>
     <view class="item">
-      <navigator url="/pages/select-address/index" hover-class="none" class="a">
+      <navigator url="/pages/me/select-address/index" hover-class="none" class="a">
         <wxc-icon name='wap-home' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
         <text class="txt">收货地址</text>
       </navigator>
     </view>
     <view class="item no-border-right">
-      <navigator url="/pages/ucenter/location/location" hover-class="none" class="a">
+      <navigator url="/pages/me/location/location" hover-class="none" class="a">
         <wxc-icon name='location' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
         <text class="txt">店铺地址</text>
       </navigator>

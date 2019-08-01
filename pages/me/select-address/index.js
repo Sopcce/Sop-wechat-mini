@@ -1,6 +1,12 @@
 //index.js
 //获取应用实例
 var app = getApp()
+ 
+const selectAddressUP = app.globalData.apiDomain + "/user/selectAddress/update";
+const selectAddresslist = app.globalData.apiDomain + "/user/selectAddress/list";
+const selectAddressAdd = app.globalData.apiDomain + "/user/selectAddress/Add";
+ 
+
 Page({
   data: {
     addressList:[]
@@ -9,7 +15,7 @@ Page({
   selectTap: function (e) {
     var id = e.currentTarget.dataset.id;
     wx.request({
-      url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/user/shipping-address/update',
+      url: selectAddressUP,
       data: {
         token: wx.getStorageSync('token'),
         id:id,
@@ -44,7 +50,7 @@ Page({
   initShippingAddress: function () {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/user/shipping-address/list',
+      url: selectAddresslist,
       data: {
         token: wx.getStorageSync('token')
       },
