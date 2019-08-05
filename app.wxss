@@ -14,3 +14,6 @@
 .wxParse-img {
   display: block !important;
 }
+.sopred{
+border: 1px red dashed;
+}

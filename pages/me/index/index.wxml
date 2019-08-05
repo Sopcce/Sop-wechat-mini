@@ -1,19 +1,16 @@
 <view class="container">
+  <!-- 头像信息 -->
   <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
     <view wx:if="{{userInfo}}" class="userinfo">
-      <!-- <wxc-avatar shape="circle" scale="true"   bodyStyle="width: 160rpx;height: 160rpx"  size="large" class=""  src="{{ userInfo.avatarUrl }}"></wxc-avatar> -->
       <wxc-image wux-class="userinfo-avatar" width="160rpx" height="160rpx" shape="circle" src="{{ userInfo.avatarUrl }}" loading="Loading" />
       <view class='userinfo-text'>
         <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
-        <view style='height:10rpx;'></view>
       </view>
-
     </view>
     <view wx:else class="userinfo">
-      <wxc-avatar class="userinfo-avatar-no" mold="square" src="https://cdn.it120.cc/apifactory/2018/06/10/527a0d6e3b3f1ffc32748193d743da26.jpg" bindtap="relogin"> </wxc-avatar>
+      <wxc-image wux-class="userinfo-avatar" width="160rpx" height="160rpx" shape="circle" src="{{ userInfo.avatarUrl }}" loading="Loading" />
       <view class='userinfo-text'>
-        <text class="userinfo-nickname"> 欢迎您 ，👆 点我登陆 </text>
-        <view style='height:10rpx;'></view>
+        <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
       </view>
     </view>
     <view class='userInfoMask'></view>
@@ -23,65 +20,66 @@
 
   <view class='h-contents'>
     <view class='a-item'>
-      <wxc-icon name="chat" size="2em" info="{{score}}"></wxc-icon>
-      <view class='my'>
-        发帖    
-      </view>
+      <navigator url="/pages/me/mypost/index" hover-class="none" class="a">
+        <wxc-icon name="chat" size="2em" size='{{iconSize}}' info="{{mypost}}"></wxc-icon>
+        <view class='my'> 发帖 </view>
+      </navigator>
     </view>
     <view class='a-item'>
-     <wxc-icon name="chat"  size="2em" info="{{balance}}"></wxc-icon>
-      <view class='my'>
-        回帖      
-      </view>
+      <navigator url="/pages/me/myreply/index" hover-class="none" class="a">
+        <wxc-icon name="chat" size="2em" size='{{iconSize}}' info="{{myreply}}"></wxc-icon>
+        <view class='my'> 回帖 </view>
+      </navigator>
+
     </view>
     <view class='a-item'>
-      <wxc-icon name="chat" size="{{iconSize}}" info="{{freeze}}"></wxc-icon>
-      <view class='my'>
-        精华       
-      </view>
-    </view>  
+     <navigator url="/pages/me/myhot/index" hover-class="none" class="a">
+        <wxc-icon name="chat" size="2em" size='{{iconSize}}' info="{{myhot}}"></wxc-icon>
+        <view class='my'> 精华 </view>
+      </navigator>       
+    </view>
   </view>
 
   <view class="user-menu">
     <view class="item">
       <navigator url="/pages/me/order-list/index" hover-class="none" class="a">
-        <wxc-icon name='underway-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon'  ></wxc-icon>
+        <wxc-icon name='underway-o' size='{{iconSize}}' color='{{iconColor}}' custom-style='item-icon'></wxc-icon>
         <text class="txt">订单管理</text>
       </navigator>
     </view>
     <view class="item">
       <navigator url="/pages/me/select-address/index" hover-class="none" class="a">
-        <wxc-icon name='wap-home' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
+        <wxc-icon name='wap-home' size='{{iconSize}}' color='{{iconColor}}' custom-style='item-icon'></wxc-icon>
         <text class="txt">收货地址</text>
       </navigator>
     </view>
     <view class="item no-border-right">
       <navigator url="/pages/me/location/location" hover-class="none" class="a">
-        <wxc-icon name='location' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
+        <wxc-icon name='location' size='{{iconSize}}' color='{{iconColor}}' custom-style='item-icon'></wxc-icon>
         <text class="txt">店铺地址</text>
       </navigator>
-    </view>      
+    </view>
     <view class="item item-bottom" bindtap='makePhoneCall'>
       <navigator url="" hover-class="none" class="a">
-        <wxc-icon name='question-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
+        <wxc-icon name='question-o' size='{{iconSize}}' color='{{iconColor}}' custom-style='item-icon'></wxc-icon>
         <text class="txt">联系客服</text>
       </navigator>
     </view>
     <view class="item item-bottom" bindtap="aboutUs">
       <navigator url="url" hover-class="none" class="a">
-        <wxc-icon name='info-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
+        <wxc-icon name='info-o' size='{{iconSize}}' color='{{iconColor}}' custom-style='item-icon'></wxc-icon>
         <text class="txt">关于我们</text>
       </navigator>
     </view>
     <view class="item no-border-bottom">
       <navigator url="/pages/ucenter/feedback/feedback" hover-class="none" class="a">
-        <wxc-icon name='warning-o' size='{{iconSize}}' color='{{iconColor}}'  custom-style='item-icon' ></wxc-icon>
+        <wxc-icon name='warning-o' size='{{iconSize}}' color='{{iconColor}}' custom-style='item-icon'></wxc-icon>
         <text class="txt">意见反馈</text>
       </navigator>
     </view>
   </view>
   <view style="height:20rpx;width:100%;"></view>
-  <view class="my-item" >
+  <view class="my-item">
     <wxc-button plain hairline type="primary" block="true" round="true" bindclick="relogin">重新授权登录</wxc-button>
   </view>
 
@@ -91,7 +89,7 @@
 
 
 
-  <view class="version" >Copyright © 2019-2018  {{version}} (GitHub sopcce)</view>
-   
+  <view class="version">Copyright © 2019-2018 {{version}} (GitHub sopcce)</view>
+
   <view style="height:12rpx;width:100%;"></view>
 </view>

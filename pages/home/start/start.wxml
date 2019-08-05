@@ -13,7 +13,7 @@
       </view>
       <view class="bd">
         <view class="smalltitle">有 “梦想” 就要 “行动”</view>
-       
+
         <wxc-button round='true' type="primary" class="confirm-btn" size='normal' bindclick='goToIndex'>
           欢迎光临
           <wxc-icon style='margin-left:20rpx;' color="#fff" name="arrow"></wxc-icon>

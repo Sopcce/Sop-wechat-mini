@@ -14,12 +14,15 @@ Page({
     aboutUsTitle: '',
     aboutUsContent: '',
     servicePhoneNumber: '',
-    balance: '99+',
-    freeze: 4,
-    score: 10,
+     
+  
     score_sign_continuous: 0,
     iconSize: '2em',
-    iconColor: '#999999'
+    iconColor: '#999999',
+
+    mypost:'45',
+    myreply: '45',
+    myhot: '45',
   },
   onPullDownRefresh: function () {
     var that = this
@@ -49,7 +52,7 @@ Page({
   onShow() {
     var that = this;
     that.getUserApiInfo();
-    that.getUserAmount();
+    // that.getUserAmount();
     that.checkScoreSign();
     that.getAboutUs();
     that.getservicePhoneNumber();
@@ -141,25 +144,7 @@ Page({
     })
 
   },
-  getUserAmount: function () {
-    var that = this;
-    wx.request({
-      url: useramount,
-      data: {
-        token: wx.getStorageSync('token')
-      },
-      success: function (res) {
-        if (res.data.code == 0) {
-          that.setData({
-            balance: res.data.data.balance,
-            freeze: res.data.data.freeze,
-            score: res.data.data.score
-          });
-        }
-      }
-    })
-
-  },
+ 
   getAboutUs: function () {
     var that = this
     //  获取关于我们Title
@@ -233,7 +218,7 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 0) {
-          that.getUserAmount();
+          // that.getUserAmount();
           that.checkScoreSign();
         } else {
           wx.showModal({
@@ -247,7 +232,7 @@ Page({
   },
   relogin: function () {
     wx.navigateTo({
-     url: "/pages/authorize/index"
+     url: "/pages/me/authorize/index"
     })
     this.onLoad()
   }

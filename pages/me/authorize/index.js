@@ -1,69 +1,9 @@
-// pages/authorize/index.js
 var app = getApp();
-Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
+const userchecktoken = app.globalData.apiDomain + "/user/checktoken";
+const userwxapplogin = app.globalData.apiDomain + "/user/wxapplogin";
+const userwxappregister = app.globalData.apiDomain + "/user/wxappregister";
+ 
+Page({ 
   rejectLogin: function (e){
     wx.navigateBack({
       
@@ -81,7 +21,7 @@ Page({
     let token = wx.getStorageSync('token');
     if (token) {
       wx.request({
-        url: app.globalData.subDomain + '/user/check-token',
+        url: userchecktoken,
         data: {
           token: token
         },
@@ -99,9 +39,9 @@ Page({
     }
     wx.login({
       success: function (res) {
-        console.log(JSON.stringify(res))
+        console.log('wx.login:'+JSON.stringify(res))
         wx.request({
-          url: app.globalData.subDomain + '/user/wxapp/login',
+          url: userwxapplogin,
           data: {
             code: res.code
           },
@@ -149,7 +89,7 @@ Page({
 
             // 下面开始调用注册接口
             wx.request({
-              url: app.globalData.subDomain + '/user/wxapp/register/complex',
+              url: userwxappregister,
               data: { code: code, encryptedData: encryptedData, iv: iv }, // 设置请求的 参数
               success: (res) => {
                 wx.hideLoading();

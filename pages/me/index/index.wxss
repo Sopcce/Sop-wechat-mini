@@ -4,7 +4,7 @@ page {
 .container{
   min-height: 100%;
   background-color: #f4f4f4;
-  font-size: 24rpx;
+  font-size: 9pt;
 }
 
 .userbox {
@@ -12,14 +12,15 @@ page {
   display: flex;
 	flex-direction: column;
   width: 100%;
-  height: 300rpx;
+  height: 430rpx;
   align-items: center;
   justify-content: center;
+  /* border: 1px red dashed; */
 }
 .userbox .userinfo {
 	display: flex;
 	flex-direction: column;
-  width: 750rpx;
+  /* width: 750rpx; */
   z-index: 100;
   margin-top: 100rpx;
 	align-items: center;
@@ -30,7 +31,7 @@ page {
   display: block;
 	width: 160rpx;
 	height: 160rpx;
-  /* margin: 20rpx 0; */
+   margin: 20rpx 0; 
   border: 5rpx solid #eee;
   border-radius: 50%;
   z-index: 101;
@@ -53,9 +54,9 @@ page {
 }
 
 .userbox .userinfo .userinfo-text .userinfo-nickname {
-  font-size: 28rpx;
+  font-size: 12pt;
   font-weight: bold;
-  color: #333;
+  color: #353535;
 }
 
 .userbox .userInfoMask{
@@ -69,22 +70,7 @@ page {
   background-color: #FFF;
 }
 
-.phoneNumber{
-  align-items: center;
-  font-size: 24rpx;
-  color: #333333;
-  margin-bottom: 20rpx;
-}
-
-.pin-phoneNumber{
-  align-items: center;
-  margin-bottom: 20rpx;
-  padding: 0 10rpx;
-  font-size: 20rpx;
-  color: #ff5577;
-  background-color: #ffe8ee;
-  border-radius: 1% solid #ffe8ee;
-}
+ 
 
 .userbox .my-sign{
   position: absolute;
@@ -94,11 +80,11 @@ page {
   margin-top: 30rpx;
   font-size: 24rpx;
 }
-
+/* 发帖 回帖 精华 */
 .h-contents{
   z-index: 100;
   width: 100%;
-  height: 125rpx;
+  height: 120rpx;
   margin-bottom: 20rpx;
   background-color: #FFF;
   display: flex;
