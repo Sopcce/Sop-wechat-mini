@@ -1,12 +1,19 @@
 //app.js
 var starscore = require("./templates/starscore/starscore.js");
+ 
+
+
 App({
 
   onLaunch: function() {
     var that = this;
+    
+    const configGetvalue = that.globalData.apiDomain + "/config/Getvalue";
+    const scoreSendRule = that.globalData.apiDomain + "/score/SendRule";
+
     //  获取商城名称
     wx.request({
-      url: 'https://api.it120.cc/' + that.globalData.subDomain + '/config/get-value',
+      url: configGetvalue,
       data: {
         key: 'mallName'
       },
@@ -17,7 +24,7 @@ App({
       }
     })
     wx.request({
-      url: 'https://api.it120.cc/' + that.globalData.subDomain + '/score/send/rule',
+      url: scoreSendRule,
       data: {
         code: 'goodReputation'
       },
@@ -28,7 +35,7 @@ App({
       }
     })
     wx.request({
-      url: 'https://api.it120.cc/' + that.globalData.subDomain + '/config/get-value',
+      url: configGetvalue,
       data: {
         key: 'recharge_amount_min'
       },
